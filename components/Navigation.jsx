@@ -4,11 +4,10 @@ import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
-const navigation = [
-  { name: "Home", href: "/", current: true },
-  { name: "Services", href: "/services", current: false },
+const navigations = [
+  { name: "Home", href: "/", current: false },
   { name: "About", href: "/about", current: false },
-  { name: "Users", href: "/users", current: false },
+  { name: "Users", href: "/users", current: true },
 ];
 
 function classNames(...classes) {
@@ -48,20 +47,21 @@ function Navegation() {
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
-                    {navigation.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.href}
-                        className={classNames(
-                          item.current
-                            ? "bg-gray-900 text-white"
-                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                          "rounded-md px-3 py-2 text-sm font-medium"
-                        )}
-                        aria-current={item.current ? "page" : undefined}
-                      >
-                        {item.name}
-                      </Link>
+                    {navigations.map((item) =>(                    
+                        <Link
+                          key={item.name}
+                          href={item.href}
+                          className={classNames(
+                            item.current
+                              ? "bg-gray-900 text-white"
+                              : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                            "rounded-md px-3 py-2 text-sm font-medium"
+                          )}
+                          aria-current={item.current ? "page" : undefined}
+                        >
+                          {item.name}
+                        </Link>
+                      
                     ))}
                   </div>
                 </div>
@@ -145,7 +145,7 @@ function Navegation() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 px-2 pb-3 pt-2">
-              {navigation.map((item) => (
+              {navigations.map((item) => (
                 <Disclosure.Button
                   key={item.name}
                   as="a"

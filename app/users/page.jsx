@@ -1,4 +1,4 @@
-import UserItems from "@/components/UserItem";
+import UserItem from "@/components/UserItem";
 
 async function fetchUsers() {
   const resp = await fetch("https://reqres.in/api/users?page=2");
@@ -14,8 +14,8 @@ export default async function UsersPage() {
       <ul role="list" className="divide-y divide-gray-100">
         {
           users.map((user)=>(
-             <li key={user.id} className="flex justify-between gap-x-6 py-5">
-               <UserItems first_name={user.first_name} email={user.email} avatar={user.avatar}/>
+             <li key={user.id} className="flex justify-between py-5">
+               <UserItem first_name={user.first_name} email={user.email} avatar={user.avatar}/>
              </li>
           )) 
         }        
