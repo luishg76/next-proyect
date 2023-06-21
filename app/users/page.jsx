@@ -13,10 +13,8 @@ export default async function UsersPage() {
       <h1>Users List</h1>
       <ul role="list" className="divide-y divide-gray-100">
         {
-          users.map((user)=>(
-             <li key={user.id} className="flex justify-between py-5">
-               <UserItem first_name={user.first_name} email={user.email} avatar={user.avatar}/>
-             </li>
+          users.map((user)=>(             
+               <UserItem userId={user.id} first_name={user.first_name} email={user.email} avatar={user.avatar}/>             
           )) 
         }        
       </ul>
