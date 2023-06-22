@@ -14,7 +14,7 @@ export default async function UsersPage() {
       <ul role="list" className="divide-y divide-gray-100">
         {
           users.map((user)=>(
-               <UserItem userId={user.id} first_name={user.first_name} email={user.email} avatar={user.avatar}/>
+               <UserItem userId={user.id} first_name={user.first_name+' '+user.last_name} email={user.email} avatar={user.avatar}/>
           )) 
         }        
       </ul>
