@@ -1,4 +1,4 @@
-export default function UserDetails({params}) {
+export default function UserDetailsPage({params}) {
   return (
     <div>User Details</div>
   )
