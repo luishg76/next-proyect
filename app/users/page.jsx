@@ -1,8 +1,7 @@
 import UserItem from "@/app/users/UserItem";
-import Link from "next/link"
 
 async function fetchUsers() {
-  const resp = await fetch("https://reqres.in/api/users?page=2");
+  const resp = await fetch("https://reqres.in/api/users?page=1");
   const data = await resp.json();
   return data.data;
 }
