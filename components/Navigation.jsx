@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import miavatar from '../public/img/avatar2.png';
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
@@ -87,10 +88,8 @@ function Navegation() {
                       <span className="sr-only">Open user menu</span>
                       <Image
                         className="h-8 w-8 rounded-full"
-                        src="/img/avatar.png"
-                        alt=""
-                        width={14}
-                        height={18}
+                        src={miavatar}
+                        alt=""                       
                       />
                     </Menu.Button>
                   </div>
