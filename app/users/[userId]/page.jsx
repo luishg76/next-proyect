@@ -9,9 +9,9 @@ async function fetchUser(userid) {
 export default async function UserDetailsPage({ params }) {
   const user = await fetchUser(params.userId);  
   return (
-    <div className="container">
+    <>
       <h1>User Details</h1>
-      <UserDetails first_name={user.data.first_name} last_name={user.data.last_name} avatar={user.data.avatar} support={user.support}/>
-    </div>
+      <UserDetails email={user.data.email} first_name={user.data.first_name} last_name={user.data.last_name} avatar={user.data.avatar} support={user.support}/>
+    </>
   );
 }
